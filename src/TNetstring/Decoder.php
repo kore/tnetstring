@@ -42,7 +42,7 @@ class TNetstring_Decoder
             $values[]    = $this->convertPayloadToPHPValue($payload, $payloadType);
         }
         
-        return count($values) > 1 ? $values : $values[0];
+        return count($values) !== 1 ? $values : $values[0];
     }
 
     protected function convertPayloadToPHPValue($payload, $type) {
